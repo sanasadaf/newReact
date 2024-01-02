@@ -1,13 +1,61 @@
-import React from 'react'
+// import React from "react";
+// import './NavBar.css';
+// import Homepage from "../pages/homepage/Homepage";
+// import Image from '../assets/homepageImage/images (2).jpg'
+// const Navbar = () => {
+//   return (
+//     <div className="app-container">
+//       <nav>
+//         <ul className="nav-list">
+//           <li className="nav-item">
+//             <a href={Homepage} className="logo-link">
+//               <img src={Image}alt="Logo" className="logo" />
+//             </a>
+//           </li>
+//           <li className="nav-item">
+//             <a href="#clothes">Clothes</a>
+//           </li>
+//           <li className="nav-item">
+//             <a href="#books">Books</a>
+//           </li>
+//           <li className="nav-item">
+//             <a href="#cart">CART</a>
+//           </li>
+//         </ul>
+//       </nav>
+//     </div>
+//   );
+// };
 
-const navbar = () => {
+// export default Navbar;
+import React from "react";
+import { Link } from 'react-router-dom';
+import Homepage from "../pages/homepage/Homepage";
+import Image from '../assets/homepageImage/images (2).jpg';
+
+const Navbar = () => {
   return (
-    <div>
-      <h1>
-        hello
-      </h1>
+    <div className="app-container">
+      <nav>
+        <ul className="nav-list">
+          <li className="nav-item">
+            <Link to="/" className="logo-link">
+              <img src={Image} alt="Logo" className="logo" />
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/clothes">Clothes</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/books">Books</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/cart">CART</Link>
+          </li>
+        </ul>
+      </nav>
     </div>
-  )
-}
+  );
+};
 
-export default navbar
+export default Navbar;
