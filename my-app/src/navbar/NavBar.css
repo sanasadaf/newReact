@@ -16,28 +16,24 @@
   }
   
   .logo {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    border-radius:50%;
     overflow: hidden;
   }
-  
-  .nav-items {
-    justify-content: center;
-
+  .cart {
+    padding-left: 420px;
   }
-  
+  .cart-icon {
+    padding-left: 5px;
+  }
   .clothes {
-    margin-left: 30%;
+    margin-left: 40%;
   }
   
   .books {
     margin-left: 5%;
   }
-  
-.cart{
- margin-left: 90%;
-}
   
   .nav-item a {
     text-decoration: none;
