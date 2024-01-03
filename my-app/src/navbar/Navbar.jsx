@@ -1,36 +1,5 @@
-// import React from "react";
-// import './NavBar.css';
-// import Homepage from "../pages/homepage/Homepage";
-// import Image from '../assets/homepageImage/images (2).jpg'
-// const Navbar = () => {
-//   return (
-//     <div className="app-container">
-//       <nav>
-//         <ul className="nav-list">
-//           <li className="nav-item">
-//             <a href={Homepage} className="logo-link">
-//               <img src={Image}alt="Logo" className="logo" />
-//             </a>
-//           </li>
-//           <li className="nav-item">
-//             <a href="#clothes">Clothes</a>
-//           </li>
-//           <li className="nav-item">
-//             <a href="#books">Books</a>
-//           </li>
-//           <li className="nav-item">
-//             <a href="#cart">CART</a>
-//           </li>
-//         </ul>
-//       </nav>
-//     </div>
-//   );
-// };
-
-// export default Navbar;
 import React from "react";
 import { Link } from 'react-router-dom';
-import Homepage from "../pages/homepage/Homepage";
 import Image from '../assets/homepageImage/images (2).jpg';
 
 const Navbar = () => {
@@ -43,14 +12,14 @@ const Navbar = () => {
               <img src={Image} alt="Logo" className="logo" />
             </Link>
           </li>
-          <li className="nav-item">
-            <Link to="/clothes">Clothes</Link>
+          <li className="nav-item clothes">
+            <Link to="/clothes" className="nav-items">Clothes</Link>
+          </li>
+          <li className="nav-item books">
+            <Link to="/books" className="nav-items">Books</Link>
           </li>
           <li className="nav-item">
-            <Link to="/books">Books</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/cart">CART</Link>
+            <Link to="/cart" className="cart">CART</Link>
           </li>
         </ul>
       </nav>
