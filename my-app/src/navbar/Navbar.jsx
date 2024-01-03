@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from 'react-router-dom';
 import Image from '../assets/homepageImage/images (2).jpg';
 import { GrCart } from "react-icons/gr";
-import CommonMenuBar from "../common-components/menu-bar/Menubar";
+// import CommonMenuBar from "../common-components/menu-bar/Menubar";
 
 const Navbar = () => {
   const [isCommonMenuBarVisible, setCommonMenuBarVisibility] = useState(false);
@@ -33,9 +33,9 @@ const Navbar = () => {
             </Link>
 
           </li>
-          <CommonMenuBar categories={["T-Shirts", "Shirts", "Sweaters", "Jeans",
+          {/* <CommonMenuBar categories={["T-Shirts", "Shirts", "Sweaters", "Jeans",
            "Pants", "Skirts", "Dresses", "Boys' Uniform", "Girls' Uniform", "Accessories"]}
-            isVisible={isCommonMenuBarVisible} onToggle={() => {}} />
+            isVisible={isCommonMenuBarVisible} onToggle={() => {}} /> */}
         </ul>
       </nav>
     </div>
