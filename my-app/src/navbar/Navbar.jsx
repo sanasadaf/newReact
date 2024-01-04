@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 import Image from "../assets/homepageImage/images (2).jpg";

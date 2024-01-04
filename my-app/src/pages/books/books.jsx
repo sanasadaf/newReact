@@ -1,18 +1,38 @@
-// import React from "react";
 
-// const Books = ({ categories, isVisible, onToggle }) => {
-//   return (
-//     <div>
-//       <h2>Book Categories</h2>
-//       <div className={`books ${isVisible ? 'visible' : ''}`}>
-//         {categories.map((category, index) => (
-//           <div key={index} className="book-item" onClick={() => onToggle(category)}>
-//             <span className="book-item-label">{category}</span>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
+import React, { useState } from "react";
+import MenuBar from "../../common-components/menu-bar/Menubar";
 
-// export default Books;
+const Books = () => {
+  const BooksCategories = [
+    "Fantasy",
+    "Fiction",
+    "Horror",
+    "Mystery",
+    "Novels",
+    "Romance",
+    "Science-Fiction",
+    "Suspence",
+    "Thriller",
+  ];
+
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+    console.log("Selected category in Clothes component:", category);
+
+  };
+
+  return (
+    <div>
+      <MenuBar
+        selectedCategory={selectedCategory}
+        isVisible={selectedCategory !== "Books"}
+        categories={BooksCategories}
+        onCategoryClick={handleCategorySelect}
+      />
+    </div>
+  );
+};
+
+export default Books;
