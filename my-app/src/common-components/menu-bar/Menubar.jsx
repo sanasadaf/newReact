@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+import Books from "../../pages/books/books";
 
-const CommonMenuBar = ({ categories, isVisible, onToggle }) => {
+const Menubar = () => {
+  const [isBooksVisible, setBooksVisibility] = useState(false);
+
+  const toggleBooksVisibility = () => {
+    setBooksVisibility(!isBooksVisible);
+  };
+
   return (
-    <div className={`common-menu-bar ${isVisible ? 'visible' : ''}`}>
-      {categories.map((category, index) => (
-        <div key={index} className="menu-item" onClick={() => onToggle(category)}>
-          <span className="menu-item-label">{category}</span>
-        </div>
-      ))}
+    <div>
+      <button onClick={toggleBooksVisibility}>Show Books</button>
+      <Menubar isVisible={isBooksVisible} 
+      categories={["Fiction", "Non-Fiction", "Mystery", "Science Fiction",
+       "Fantasy", "Romance", "Thriller", "Novels", "Horror"]} onToggle={() => {}} />
     </div>
   );
 };
-export default CommonMenuBar;
+
+export default Menubar;
