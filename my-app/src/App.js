@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Homepage from './pages/homepage/Homepage';
 import Navbar from './navbar/Navbar';
-import Clothes from './pages/clothes/Clothes';
+import Clothes from './pages/clothes/clothes';
 import { useState } from 'react';
 const App = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
