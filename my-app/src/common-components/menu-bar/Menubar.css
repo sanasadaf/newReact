@@ -1,37 +1,32 @@
-.App {
-    width: 100vw;
-    height: 100vh;
+.menu-bar {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
-body{
-    margin: 0;
-    padding: 0;
+
+.menu-bar.visible {
+  display: block;
+  opacity: 1;
 }
-.Menubar{
-    height: 100%;
-    width: 300px;
-    background-color: rgb(9, 46, 46);
+
+.menu-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
-.common-menu-bar {
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 150px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: none;
-  }
-  .common-menu-bar.visible {
-    display: block;
-  }
-  .menu-item {
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  .menu-item:hover {
-    background-color: #F2F2F2;
-  }
-  .menu-item-label {
-    font-weight: bold;
-  }
+
+.menu-item:hover {
+  background-color: #f0f0f0;
+}
+
+.menu-item-label {
+  font-size: 14px;
+  color: #333;
+}
