@@ -1,29 +1,22 @@
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './navbar/Navbar'
 import Homepage from './pages/homepage/Homepage';
-import "./navbar/NavBar.css";
-import Cards from './common-components/cards/Cards';
-import Menubar from './common-components/menu-bar/Menubar';
+import Navbar from './navbar/Navbar';
+import { useState } from 'react';
 const App = () => {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+  };
   return (
-    <>
-
     <Router>
-          <Navbar/>
-          <Menubar/>
-           <Books />
-
-          <Cards/>
+      <Navbar onSelectCategory={handleCategorySelect} />
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/clothes" element={<Clothes />} />
+        {/* <Route path="/clothes" element={<Clothes />} /> */}
+{/* <Route path="/books" element={<Books />} /> */}
       </Routes>
     </Router>
-    </>
   );
 }
-
 export default App;
-

@@ -1,21 +1,16 @@
-import React, { useState } from "react";
-import Books from "../../pages/books/books";
-
-const Menubar = () => {
-  const [isBooksVisible, setBooksVisibility] = useState(false);
-
-  const toggleBooksVisibility = () => {
-    setBooksVisibility(!isBooksVisible);
-  };
-
+import React from "react";
+import './Menubar.css'
+const MenuBar = ({ selectedCategory, isVisible, categories, onCategoryClick }) => {
+    console.log("Is Visible:", isVisible);
+  const categoriesToRender = isVisible ? categories || [] : [];
   return (
-    <div>
-      <button onClick={toggleBooksVisibility}>Show Books</button>
-      <Menubar isVisible={isBooksVisible} 
-      categories={["Fiction", "Non-Fiction", "Mystery", "Science Fiction",
-       "Fantasy", "Romance", "Thriller", "Novels", "Horror"]} onToggle={() => {}} />
+    <div className={`menu-bar ${isVisible ? "visible" : ""}`}>
+      {categoriesToRender.map((category, index) => (
+        <div key={index} className="menu-item" onClick={() => onCategoryClick(category)}>
+          <span className="menu-item-label">{category}</span>
+        </div>
+      ))}
     </div>
   );
 };
-
-export default Menubar;
+export default MenuBar;

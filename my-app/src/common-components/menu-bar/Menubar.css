@@ -1,37 +1,37 @@
-.App {
-    width: 100vw;
-    height: 100vh;
-}
-body{
-    margin: 0;
-    padding: 0;
-}
-.menu-bar{
-    height: 100%;
-    width: 300px;
-    background-color: rgb(9, 46, 46);
-}
 .menu-bar {
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 150px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: none;
-  }
-  .menu-bar.visible {
-    display: block;
-  }
-  .menu-item {
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  .menu-item:hover {
-    background-color: #F2F2F2;
-  }
-  .menu-item-label {
-    font-weight: bold;
-  }
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.menu-bar.visible {
+  display: block;
+  opacity: 1;
+}
+.menu-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.menu-item:hover {
+  background-color: #F0F0F0;
+}
+.menu-item-label {
+  font-size: 14px;
+  color: #333;
+}
+
+
+
+
+
+
+
+
+
