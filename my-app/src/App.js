@@ -5,7 +5,7 @@ import Navbar from './navbar/Navbar'
 import Homepage from './pages/homepage/Homepage';
 import "./navbar/NavBar.css";
 import Cards from './common-components/cards/Cards';
-import Menubar from './common-components/menu-bar/Menubar'
+import Menubar from './common-components/menu-bar/Menubar';
 const App = () => {
   return (
     <>
@@ -13,10 +13,12 @@ const App = () => {
     <Router>
           <Navbar/>
           <Menubar/>
-          {/* <Cards/> */}
+           <Books />
+
+          <Cards/>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        {/* <Route path="/clothes" element={<Clothes />} /> */}
+        <Route path="/clothes" element={<Clothes />} />
       </Routes>
     </Router>
     </>
@@ -24,3 +26,4 @@ const App = () => {
 }
 
 export default App;
+
