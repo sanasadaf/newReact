@@ -6,7 +6,8 @@ import './Homepage.css';
 const Homepage = () => {
   return (
     <div className="homepage-container">
-      <h1>Welcome to My Website</h1>
+      <h1>Page to Wardrobe Wonders
+</h1>
     </div>
 
 
