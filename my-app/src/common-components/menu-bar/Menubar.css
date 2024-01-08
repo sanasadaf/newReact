@@ -1,0 +1,36 @@
+.menu-bar {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.menu-bar.visible {
+  display: block;
+  opacity: 1;
+}
+.menu-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.menu-item:hover {
+  background-color: #F0F0F0;
+}
+.menu-item-label {
+  font-size: 14px;
+  color: #333;
+}
+
+
+
+
+
+
+
+

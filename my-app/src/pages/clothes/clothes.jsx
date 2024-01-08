@@ -2,17 +2,18 @@
 import React, { useState } from "react";
 import MenuBar from "../../common-components/menu-bar/Menubar";
 
-const Books = () => {
-  const BooksCategories = [
-    "Fantasy",
-    "Fiction",
-    "Horror",
-    "Mystery",
-    "Novels",
-    "Romance",
-    "Science-Fiction",
-    "Suspence",
-    "Thriller",
+const Clothes = () => {
+  const clothingCategories = [
+    "T-Shirts",
+    "Shirts",
+    "Sweaters",
+    "Jeans",
+    "Pants",
+    "Skirts",
+    "Dresses",
+    "Boys' Uniform",
+    "Girls' Uniform",
+    "Accessories"
   ];
 
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -27,12 +28,12 @@ const Books = () => {
     <div>
       <MenuBar
         selectedCategory={selectedCategory}
-        isVisible={selectedCategory !== "Books"}
-        categories={BooksCategories}
+        isVisible={selectedCategory !== "Clothes"}
+        categories={clothingCategories}
         onCategoryClick={handleCategorySelect}
       />
     </div>
   );
 };
 
-export default Books;
+export default Clothes;
