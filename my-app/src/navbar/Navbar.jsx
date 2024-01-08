@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import './NavBar.css';
 import Image from "../assets/homepageImage/images (2).jpg";
 import { GrCart } from "react-icons/gr";
-const Navbar = ({ onSelectCategory }) => {
+
+const Navbar = ({ onSelectCategory, selectedCategory }) => {
   return (
     <div className="app-container">
       <nav>
@@ -13,12 +14,12 @@ const Navbar = ({ onSelectCategory }) => {
               <img src={Image} alt="Logo" className="logo" />
             </Link>
           </li>
-          <li className="nav-item clothes" onClick={() => onSelectCategory("Clothes")}>
-  <Link to="/clothes" className="nav-items">Clothes</Link>
-</li>
-<li className="nav-item books" onClick={() => onSelectCategory("Books")}>
-  <Link to="/books" className="nav-items">Books</Link>
-</li>
+          <li className={`nav-item clothes ${selectedCategory === "Clothes" ? "active-tab" : ""}`} onClick={() => onSelectCategory("Clothes")}>
+            <Link to="/clothes" className="nav-items">Clothes</Link>
+          </li>
+          <li className={`nav-item books ${selectedCategory === "Books" ? "active-tab" : ""}`} onClick={() => onSelectCategory("Books")}>
+            <Link to="/books" className="nav-items">Books</Link>
+          </li>
           <li className="nav-item">
             <Link to="/cart" className="cart">CART</Link>
           </li>
@@ -30,4 +31,5 @@ const Navbar = ({ onSelectCategory }) => {
     </div>
   );
 };
+
 export default Navbar;
