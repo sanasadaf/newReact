@@ -4,9 +4,17 @@
     background-position: center;
     height: 100vh; 
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    color:black;
+
+   
   }
- 
+  h1{
+    align-items: center;
+    color:rgb(56, 2, 58);
+    margin-top: 15%;
+    margin-right: 10%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif,'Encorpada Pro';
+  }
+ h1:hover{
+  color: rgb(8, 8, 8);
+ }
