@@ -11,8 +11,8 @@ const Clothes = () => {
     "Pants",
     "Skirts",
     "Dresses",
-    "Boys Uniform",
-    "Girls Uniform",
+    "Boys' Uniform",
+    "Girls' Uniform",
     "Accessories"
   ];
 
