@@ -13,7 +13,7 @@ const Clothes = () => {
     "Dresses",
     "Boys' Uniform",
     "Girls' Uniform",
-    "Accessories"
+    // "Accessories"
   ];
 
   const [selectedCategory, setSelectedCategory] = useState(null);
