@@ -1,0 +1,23 @@
+.menu-bar{
+  border:2px solid rgb(70, 69, 69);
+  height: 430px;
+  width: 300px;
+  margin-left: 10%;
+  border-radius: 8px;
+  margin-top: 5%;
+}
+ .menu-item-label {
+  cursor: pointer;
+  padding: 50px 70px;
+  font-size: 16px;
+  text-transform: uppercase;     
+}
+.menu-item{
+  margin-top: 6%;
+}
+@media (max-width: 768px) {
+  .menu-bar {
+    top: 60px; 
+  }
+}
+

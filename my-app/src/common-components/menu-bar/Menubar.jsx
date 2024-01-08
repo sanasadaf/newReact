@@ -1,14 +1,16 @@
 import React from "react";
-
-const CommonMenuBar = ({ categories, isVisible, onToggle }) => {
+import './Menubar.css'
+const MenuBar = ({ selectedCategory, isVisible, categories, onCategoryClick }) => {
+    console.log("Is Visible:", isVisible);
+  const categoriesToRender = isVisible ? categories || [] : [];
   return (
-    <div className={`common-menu-bar ${isVisible ? 'visible' : ''}`}>
-      {categories.map((category, index) => (
-        <div key={index} className="menu-item" onClick={() => onToggle(category)}>
+    <div className={`menu-bar ${isVisible ? "visible" : ""}`}>
+      {categoriesToRender.map((category, index) => (
+        <div key={index} className="menu-item" onClick={() => onCategoryClick(category)}>
           <span className="menu-item-label">{category}</span>
         </div>
       ))}
     </div>
   );
 };
-export default CommonMenuBar;
+export default MenuBar;
