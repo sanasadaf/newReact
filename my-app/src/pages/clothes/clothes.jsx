@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import React from "react";
 import MenuBar from "../../common-components/menu-bar/Menubar";
 
 const Clothes = () => {
@@ -16,22 +15,9 @@ const Clothes = () => {
     "Accessories"
   ];
 
-  const [selectedCategory, setSelectedCategory] = useState(null);
-
-  const handleCategorySelect = (category) => {
-    setSelectedCategory(category);
-    console.log("Selected category in Clothes component:", category);
-
-  };
-
   return (
     <div>
-      <MenuBar
-        selectedCategory={selectedCategory}
-        isVisible={selectedCategory !== "Clothes"}
-        categories={clothingCategories}
-        onCategoryClick={handleCategorySelect}
-      />
+      <MenuBar categories={clothingCategories} />
     </div>
   );
 };
