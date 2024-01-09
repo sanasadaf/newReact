@@ -8,11 +8,7 @@ const Homepage = () => {
     <div className="homepage-container">
       <h1>Page to Wardrobe Wonders
 </h1>
-    </div>
-
-
-    
-  
+    </div>  
   );
 }
 
