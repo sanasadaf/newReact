@@ -1,5 +1,5 @@
 .app-container {
-    background-color: #333;
+    background-color:#3F0E40;
     padding: 10px;
   }
   
@@ -45,77 +45,31 @@
     font-weight: bold;
 
   }
-  .nav-item a:hover {
-    color: #ffcc00;
-  }
-  
-  .active-tab {
-    color: #ffcc00;
-  }
-  
-   /* .custom-navbar {
-    background-color: #222;
-    padding: 10px;
-  }
-  
-  .nav-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: ;
-  }
-  
-  .nav-item {
-    margin: 0;
-    padding: 0;
-    cursor: pointer;
-  }
-  
-   /* .nav-items {
-    text-decoration: none;
-    color: white;
-    padding: 10px;
-    font-weight: bold;
-  }  */
-  /* .nav-item a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-  }
-  
   .nav-items:hover {
-    background-color: #555;
-  }
-  
-  .logo {
+ color: #b891be;
+     font-weight: bold;
+    border-radius: 9px;
     height: 40px;
-    width: 40px;
-    border-radius:50%;
-    overflow: hidden;
+    width: 120px;
+    
+   }
+   .active-tab:hover {
+    background-color: #4F1858;
+    color: #fff;
   }
-  
-  .cart {
+  .active-tab {
     color: white;
-    text-decoration: none;
-    padding: 10px;
+    background-color:rgba(189, 128, 190, 0.5);
+    /* background-color: rgb(161, 108, 163); */
+    /* background-color:rgba(178, 129, 179, 0.5); */
+
     font-weight: bold;
-  } */
+    border-radius: 9px;
+    height: 40px;
+    width: 120px;
+    text-align: center;
+    transition: 'background-color' 0.3s, color 0.3s;
+  }
+
   
-  /* .cart:hover {
-    background-color: #555;
-  } */
-  /* .cart {
-    padding-left: 450px;
-  }
-  .cart-icon {
-    padding-left: 5px;
-  }
-  .clothes {
-    margin-left: 40%;
-  }
   
-  .books {
-    margin-left: 5%;
-  }
-    */

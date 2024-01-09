@@ -1,36 +1,44 @@
-.menu-bar {
-  display: none;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+.menu-bar{
+  border:2px solid rgb(56, 2, 58);
+  height: 450px;
+  width: 213px;
+  margin-left: 3%;
+  border-radius: 8px;
+  margin-top: 3%;
+  background-color:rgba(178, 129, 179, 0.5);
+
 }
-.menu-bar.visible {
-  display: block;
-  opacity: 1;
-}
-.menu-item {
-  padding: 10px;
+ .menu-item-label {
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  text-transform: uppercase;
+  background-color: transparent;
+  border-radius: 2px;
+  font-size: .95em;
+  font-family: 'Slack-Lato', 'Slack-Fractions', 'appleLogo', sans-serif;
+  font-weight: 300;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: block;
+  margin-top: 4%
+
+     
 }
-.menu-item:hover {
-  background-color: #F0F0F0;
+
+@media (max-width: 768px) {
+  .menu-bar {
+    top: 60px; 
+  }
 }
-.menu-item-label {
-  font-size: 14px;
-  color: #333;
+.menu-item-label:hover{
+  background-color:rgba(189, 128, 190, 0.5);
+  color: white;
+  font-weight: bold;
+  border-radius: 9px;
 }
 
-
-
-
-
-
-
-
+.menu-item.active .menu-item-label {
+  background-color:rgb(73,37,74);
+  color: white;
+  font-weight: bold;
+  border-radius: 9px;
+}

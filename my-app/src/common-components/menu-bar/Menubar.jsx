@@ -1,11 +1,18 @@
 import React from "react";
 import './Menubar.css';
 
-const MenuBar = ({ categories }) => {
+const MenuBar = ({ selectedCategory, isVisible, categories, onCategoryClick }) => {
+  console.log("Is Visible:", isVisible);
+  const categoriesToRender = isVisible ? categories || [] : [];
+
   return (
-    <div className="menu-bar">
-      {categories.map((category, index) => (
-        <div key={index} className="menu-item">
+    <div className={`menu-bar ${isVisible ? "visible" : ""}`}>
+      {categoriesToRender.map((category, index) => (
+        <div
+          key={index}
+          className={`menu-item ${selectedCategory === category ? "active" : ""}`}
+          onClick={() => onCategoryClick(category)}
+        >
           <span className="menu-item-label">{category}</span>
         </div>
       ))}
