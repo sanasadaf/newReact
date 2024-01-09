@@ -16,24 +16,18 @@
   font-size: .95em;
   font-family: 'Slack-Lato', 'Slack-Fractions', 'appleLogo', sans-serif;
   font-weight: 300;
-  padding: 10px 20px;
   cursor: pointer;
   display: block;
-  margin-top: 4%
-
+  margin-top: 4%;
+  padding: 10px 30px;
      
-}
-
-@media (max-width: 768px) {
-  .menu-bar {
-    top: 60px; 
-  }
 }
 .menu-item-label:hover{
   background-color:rgba(189, 128, 190, 0.5);
-  color: white;
+  color: rgb(55, 20, 56);
   font-weight: bold;
   border-radius: 9px;
+
 }
 
 .menu-item.active .menu-item-label {
@@ -41,4 +35,17 @@
   color: white;
   font-weight: bold;
   border-radius: 9px;
+}
+.menu-item.active{
+  padding: 0px 5px;
+
+}
+.menu-item:hover{
+  padding: 0px 5px;
+
+}
+@media (max-width: 768px) {
+  .menu-bar {
+    top: 60px; 
+  }
 }
