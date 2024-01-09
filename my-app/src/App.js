@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Homepage from './pages/homepage/Homepage';
 import Navbar from '../src/navbar/Navbar';
-import Clothes from './pages/clothes/clothes';
-import { useState } from 'react';
+import Clothes from './pages/clothes/ClothesPage';
 import Books from './pages/books/books';
+import Toast from './common-components/toast/Toast';
 const App = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
