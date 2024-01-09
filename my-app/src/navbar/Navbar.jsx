@@ -3,7 +3,6 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./NavBar.css";
 import Image from "../assets/homepageImage/images (2).jpg";
 import { GrCart } from "react-icons/gr";
-
 const Navbar = ({ onSelectCategory, selectedCategory }) => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -60,6 +59,7 @@ const Navbar = ({ onSelectCategory, selectedCategory }) => {
           </li>
         </ul>
       </nav>
+
     </div>
   );
 };

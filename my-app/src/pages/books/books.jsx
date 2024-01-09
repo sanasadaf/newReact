@@ -1,8 +1,9 @@
+
 import React, { useState } from "react";
 import MenuBar from "../../common-components/menu-bar/Menubar";
 
 const Books = () => {
-  const booksCategories = [
+  const BooksCategories = [
     "Fantasy",
     "Fiction",
     "Horror",
@@ -10,7 +11,7 @@ const Books = () => {
     "Novels",
     "Romance",
     "Science-Fiction",
-    "Suspense",
+    "Suspence",
     "Thriller",
   ];
 
@@ -18,14 +19,16 @@ const Books = () => {
 
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
-    console.log("Selected category in Books component:", category);
+    console.log("Selected category in Clothes component:", category);
+
   };
 
   return (
     <div>
       <MenuBar
         selectedCategory={selectedCategory}
-        categories={booksCategories}
+        isVisible={selectedCategory !== "Books"}
+        categories={BooksCategories}
         onCategoryClick={handleCategorySelect}
       />
     </div>
