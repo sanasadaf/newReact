@@ -1,18 +1,16 @@
 import React from "react";
 import './Menubar.css';
+import { observer } from 'mobx-react';
+import categoryStore from "../../store/categoryStore";
 
-const MenuBar = ({ selectedCategory, isVisible, categories, onCategoryClick }) => {
-  console.log("Is Visible:", isVisible);
+const MenuBar = ({ categories }) => {
+  const isVisible = categoryStore.selectedCategory !== null;
   const categoriesToRender = isVisible ? categories || [] : [];
 
   return (
-    <div className={`menu-bar ${isVisible ? "visible" : ""}`}>
+    <div className={`menu-bar ${isVisible ? 'visible' : ''}`}>
       {categoriesToRender.map((category, index) => (
-        <div
-          key={index}
-          className={`menu-item ${selectedCategory === category ? "active" : ""}`}
-          onClick={() => onCategoryClick(category)}
-        >
+        <div key={index} className="menu-item" onClick={() => categoryStore.setSelectedCategory(category)}>
           <span className="menu-item-label">{category}</span>
         </div>
       ))}
@@ -20,4 +18,4 @@ const MenuBar = ({ selectedCategory, isVisible, categories, onCategoryClick }) =
   );
 };
 
-export default MenuBar;
+export default observer(MenuBar);
