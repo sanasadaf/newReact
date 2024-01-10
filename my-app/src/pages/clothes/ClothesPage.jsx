@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import MenuBar from "../../common-components/menu-bar/Menubar";
-
+// import CardContainer from "../../common-components/cards-container/CardsContainer";
 const Clothes = () => {
   const clothingCategories = [
     "T-Shirts",
@@ -31,6 +31,8 @@ const Clothes = () => {
         categories={clothingCategories}
         onCategoryClick={handleCategorySelect}
       />
+     {/* <CardContainer/> */}
+
     </div>
   );
 };
