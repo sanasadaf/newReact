@@ -5,7 +5,6 @@ const Toast = () => {
   const [showSuccess, setShowSuccess] = useState(false);
   const [showWarning, setShowWarning] = useState(false);
   const [showDanger, setShowDanger] = useState(false);
-
   const showToast = (type) => {
     switch (type) {
       case 'success':
@@ -24,26 +23,26 @@ const Toast = () => {
         break;
     }
   };
-
   return (
     <div>
       {showSuccess && (
         <div className="toast success">
-          <p>Success Message</p>
+          <p>Success <br />
+            Message </p>
         </div>
       )}
       {showWarning && (
         <div className="toast warning">
-          <p>Warning Message</p>
+          <p>Warning <br /> Message</p>
         </div>
       )}
       {showDanger && (
         <div className="toast danger">
-          <p>Danger Message</p>
+          <p>Danger <br /> Message</p>
         </div>
       )}
 
-      <div className="buttons-bottom">
+      <div className="buttons-div">
         <button onClick={() => showToast('success')}>Show Success Toast</button>
         <button onClick={() => showToast('warning')}>Show Warning Toast</button>
         <button onClick={() => showToast('danger')}>Show Danger Toast</button>
