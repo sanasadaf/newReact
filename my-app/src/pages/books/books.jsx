@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { observer } from 'mobx-react';
+import categoryStore from '../../CategoryStore';
 import MenuBar from "../../common-components/menu-bar/Menubar";
-
 const Books = () => {
-  const booksCategories = [
+  const BooksCategories = [
     "Fantasy",
     "Fiction",
     "Horror",
@@ -10,26 +11,30 @@ const Books = () => {
     "Novels",
     "Romance",
     "Science-Fiction",
-    "Suspense",
+    "Suspence",
     "Thriller",
   ];
-
   const [selectedCategory, setSelectedCategory] = useState(null);
-
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
-    console.log("Selected category in Books component:", category);
+    console.log("Selected category in Clothes component:", category);
   };
-
   return (
     <div>
       <MenuBar
         selectedCategory={selectedCategory}
-        categories={booksCategories}
+        isVisible={selectedCategory !== "Books"}
+        categories={BooksCategories}
         onCategoryClick={handleCategorySelect}
       />
     </div>
   );
 };
-
 export default Books;
+
+
+
+
+
+
+
