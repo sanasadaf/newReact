@@ -1,0 +1,32 @@
+.card{
+    width:18rem;
+    margin: 10px;
+    border:2px solid rgb(56, 2, 58);
+    border-radius: 5px;
+}
+
+.container{
+    float: right;
+}
+.card-title{
+    margin-left: 4%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+}
+.card-price{
+    margin-left: 4%;
+    font-size: large;
+    font-family: cursive;
+
+}
+.plus-sign{
+    float: right;
+    font-weight: bold;
+    font-size: large;
+    color: rgb(56, 2, 58);
+}
+.card-img-top{
+    height: 200px;
+    margin-left: 14%;
+    margin-top: 4%;
+}
