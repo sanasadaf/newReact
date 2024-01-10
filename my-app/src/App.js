@@ -5,6 +5,7 @@ import Navbar from "../src/navbar/Navbar";
 import Clothes from "./pages/clothes/ClothesPage";
 import Books from "./pages/books/books";
 import Toast from "./common-components/toast/Toast";
+import CardsContainer from "../src/common-components/cards-container/CardsContainer";
 const App = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const handleCategorySelect = (category) => {
@@ -18,12 +19,15 @@ const App = () => {
           selectedCategory={selectedCategory}
         />
         <Toast />
+
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/clothes" element={<Clothes />} />
           <Route path="/books" element={<Books />} />
         </Routes>
       </Router>
+      <CardsContainer/>
+
     </>
   );
 };
