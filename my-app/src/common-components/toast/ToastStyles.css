@@ -10,6 +10,10 @@
   margin-left:80%;
   
 }
+.buttons-div{
+  float:right;
+  margin-top: 12%;
+}
 
 .toast p {
   margin: 0;
