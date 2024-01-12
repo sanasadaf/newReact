@@ -1,7 +1,7 @@
-
-import React, { useState } from "react";
+import React from "react";
 import MenuBar from "../../common-components/menu-bar/Menubar";
-// import CardContainer from "../../common-components/cards-container/CardsContainer";
+import CardsContainer from "../../common-components/cards-container/CardsContainer"; 
+
 const Clothes = () => {
   const clothingCategories = [
     "T-Shirts",
@@ -15,25 +15,17 @@ const Clothes = () => {
     "Girls' Uniform",
   ];
 
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = React.useState(null);
 
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
-    console.log("Selected category in Clothes component:", category);
-
   };
 
   return (
-    <div>
-      <MenuBar
-        selectedCategory={selectedCategory}
-        isVisible={selectedCategory !== "Clothes"}
-        categories={clothingCategories}
-        onCategoryClick={handleCategorySelect}
-      />
-     {/* <CardContainer/> */}
-
-    </div>
+    <div style={{ display: 'flex' }}>
+    <MenuBar categories={clothingCategories} onCategoryClick={handleCategorySelect} />
+    {selectedCategory && <CardsContainer selectedCategory={selectedCategory} />}
+  </div>
   );
 };
 

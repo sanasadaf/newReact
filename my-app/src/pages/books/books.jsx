@@ -1,9 +1,9 @@
-import React from "react";
-import { observer } from 'mobx-react';
-import categoryStore from "../../store/categoryStore";
+import React, { useState } from "react";
 import MenuBar from "../../common-components/menu-bar/Menubar";
+import CardsContainer from "../../common-components/cards-container/CardsContainer"; 
 
 const Books = () => {
+
   const BooksCategories = [
     "Fantasy",
     "Fiction",
@@ -16,29 +16,25 @@ const Books = () => {
     "Thriller",
   ];
 
+  const [selectedCategory, setSelectedCategory] = React.useState(null);
+
   const handleCategorySelect = (category) => {
-    categoryStore.setSelectedCategory(category);
+    setSelectedCategory(category);
+    console.log("Selected category in  component:", category);
   };
 
-  const images = categoryStore.getCategoryImages(categoryStore.selectedCategory);
 
   return (
-    <div>
-      <MenuBar
-        selectedCategory={categoryStore.selectedCategory}
-        isVisible={categoryStore.selectedCategory !== "Books"}
-        categories={BooksCategories}
-        onCategoryClick={handleCategorySelect}
-      />
-      {images.map((imageName, index) => (
-        <img
-          key={index}
-          // src={require(`./assets/BooksImages/${imageName}`)}
-          alt={`Image ${index + 1}`}
+    <div style={{ display: 'flex' }}>
+        <MenuBar
+          selectedCategory={selectedCategory}
+          categories={BooksCategories}
+          onCategoryClick={handleCategorySelect}
         />
-      ))}
+        {selectedCategory && <CardsContainer selectedCategory={selectedCategory} />}
+
     </div>
   );
 };
 
-export default observer(Books);
+export default Books;
