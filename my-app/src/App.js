@@ -7,10 +7,10 @@ import Clothes from "./pages/clothes/ClothesPage";
 import Books from "./pages/books/books";
 import CardsContainer from "../src/common-components/cards-container/CardsContainer";
 import appStore from "./store/Store";
+import Cart from "./cart/Cart";
 
 const App = () => {
   const [selectedTab, setSelectedTab] = useState("home");
-
   return (
     <>
       <Navbar onSelectCategory={setSelectedTab} selectedTab={selectedTab} />
@@ -20,6 +20,8 @@ const App = () => {
         <Route path="/" element={<Homepage />} />
         <Route path="/clothes" element={<Clothes />} />
         <Route path="/books" element={<Books />} />
+        <Route path="/cart" element={<Cart />} />
+
       </Routes>
     </>
   );

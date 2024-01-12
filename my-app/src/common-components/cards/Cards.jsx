@@ -6,16 +6,15 @@ import './Cards.css';
 
 const Cards = ({ data }) => {
   const { selectedItems, setSelectedItems } = appStore;
-
   const handleSelection = (itemId) => {
-    if (selectedItems.includes(itemId)) {
-      appStore.setSelectedItems(selectedItems.filter((id) => id !== itemId));
-    } else {
-      appStore.setSelectedItems([...selectedItems, itemId]);
-    }
-    console.log('Selected Items:', appStore.selectedItems);
-  };
+    const selectedItem = appStore.filteredData.find((item) => item.id === itemId);
 
+    if (selectedItem) {
+      appStore.addToCart(selectedItem);
+    }
+
+    appStore.setSelectedItems([...appStore.selectedItems, itemId]);
+  };
   return (
     <div className="container">
       <div className="col" key={data.id}>
