@@ -22,10 +22,12 @@
     overflow: hidden;
   }
   .cart {
-    padding-left: 420px;
+    padding-left: 11px;
   }
   .cart-icon {
-    padding-left: 5px;
+    padding-left: 197px;
+    font-size:larger;
+
   }
   .clothes {
     margin-left: 40%;
@@ -67,6 +69,6 @@
     text-align: center;
     transition: 'background-color' 0.3s, color 0.3s;
   }
-
+ 
   
   

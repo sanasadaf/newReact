@@ -1,4 +1,8 @@
-.container{
-    flex-wrap: nowrap;
+.row {
     display: inline-flex;
+    flex-wrap: nowrap;
+
+    margin-left: 30%;
+    margin-top: 15%;
+
 }
