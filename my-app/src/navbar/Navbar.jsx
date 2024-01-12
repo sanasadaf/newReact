@@ -1,24 +1,52 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./NavBar.css";
 import Image from "../assets/homepageImage/images (2).jpg";
 import { GrCart } from "react-icons/gr";
-const Navbar = ({ onSelectCategory, selectedCategory }) => {
+import appStore from "../store/Store";
+
+const NavBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-
+ 
+  
   const handleCategoryClick = (category) => {
-    onSelectCategory(category);
-  };
-
-  React.useEffect(() => {
-    const isHomePage = location.pathname === '/';
-    const isCartPage = location.pathname === '/cart';
-    
-    if (isHomePage || isCartPage) {
-      onSelectCategory(null);
+    if (appStore.selectedCategory === category) {
+      appStore.setSelectedCategory(null);
+    } else {
+      appStore.setSelectedTab(category);
+      appStore.setSelectedCategory(category);
     }
-  }, [location.pathname, onSelectCategory]);
+  };
+  // const handleCategoryClick = (category) => {
+  //   appStore.setSelectedTab(category);
+  //   appStore.setSelectedCategory(category);
+  // };
+
+  useEffect(() => {
+    const isHomePage = location.pathname === "/";
+    const isCartPage = location.pathname === "/cart";
+
+    if (isHomePage) {
+      appStore.setSelectedTab("home");
+    } else if (isCartPage) {
+      appStore.setSelectedTab("cart");
+    }
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const isClothesPage = location.pathname === "/clothes";
+    const isBooksPage = location.pathname === "/books";
+
+    if (isClothesPage && appStore.selectedTab !== "clothes") {
+      appStore.setSelectedTab(null);
+    } else if (isBooksPage && appStore.selectedTab !== "books") {
+      appStore.setSelectedTab(null);
+    }
+  }, [location.pathname]);
+console.log("Selected Tab:", appStore.selectedTab);
+console.log("Selected Category:", appStore.selectedCategory);
+
   return (
     <div className="app-container">
       <nav>
@@ -30,9 +58,9 @@ const Navbar = ({ onSelectCategory, selectedCategory }) => {
           </li>
           <li
             className={`nav-item clothes ${
-              selectedCategory === "Clothes" ? "active-tab" : ""
+              appStore.selectedTab === "clothes" ? "active-tab" : ""
             }`}
-            onClick={() => handleCategoryClick("Clothes")}
+            onClick={() => handleCategoryClick("clothes")}
           >
             <Link to="/clothes" className="nav-items">
               Clothes
@@ -40,28 +68,33 @@ const Navbar = ({ onSelectCategory, selectedCategory }) => {
           </li>
           <li
             className={`nav-item books ${
-              selectedCategory === "Books" ? "active-tab" : ""
+              appStore.selectedTab === "books" ? "active-tab" : ""
             }`}
-            onClick={() => onSelectCategory("Books")}
+            onClick={() => handleCategoryClick("books")}
           >
             <Link to="/books" className="nav-items">
               Books
             </Link>
           </li>
-          <li className={`nav-item ${selectedCategory === "Cart" ? "active-tab" : ""}`} onClick={() => handleCategoryClick("Cart")}>
-            <Link to="/cart" className="cart">CART</Link>
-          </li>
-
           <li className="nav-item cart-icon">
             <Link to="/cart-icon" className="cart-icon">
               <GrCart />
             </Link>
           </li>
+          <li
+            className={`nav-item ${
+              appStore.selectedTab === "cart" ? "active-tab" : ""
+            }`}
+            onClick={() => handleCategoryClick("cart")}
+          >
+            <Link to="/cart" className="cart">
+              CART
+            </Link>
+          </li>
         </ul>
       </nav>
-
     </div>
   );
 };
 
-export default Navbar;
+export default NavBar;

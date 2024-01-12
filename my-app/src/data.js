@@ -16,6 +16,7 @@ import Sweater1 from './assets/clotheImg/sweaters/sweater10.jpg'
 import Sweater2 from './assets/clotheImg/sweaters/sweater8.jpg'
 import tShirt1 from './assets/clotheImg/tshirts/tshirt3.jpg'
 import tShirt2 from './assets/clotheImg/tshirts/tshirt5.jpg'
+//booksData  imports
 import circe from './assets/BooksImages/fantasy/circe.png'
 import courtofwinter from  './assets/BooksImages/fantasy/court of winter.png'
 import Drift from './assets/BooksImages/fiction/Drift.png'
@@ -34,6 +35,8 @@ import Chaos from './assets/BooksImages/suspense/chaos.png'
 import LoriFoster from './assets/BooksImages/suspense/lori foster.png'
 import FiveBadDeeds from './assets/BooksImages/thriller/five bad deeds.png'
 import DeathInTheDarkWoods from './assets/BooksImages/thriller/death in the dark woods.png'
+
+
 
 export const clothesData = [
   {
@@ -112,14 +115,14 @@ export const clothesData = [
         id: 11,
         title: 'Long Sleeve T-Shirt',
         price: 1500,
-        category: "tshirts",
+        category: "T-Shirts",
         image:tShirt1
     },
     {
         id: 12,
         title: 'Mock Neck T-Shirt',
         price: 6000,
-        category: "tshirts",
+        category: "T-Shirts",
         image:tShirt2
     },
     
@@ -166,131 +169,131 @@ export const clothesData = [
             image:Sweater2
     },
 ]
-export const Books = [
-    {
-        id: 1,
-        title: 'Fantasy Books',
-        price: 5000,
-        category: "Fantasy",
-        image: circe,
-    },
-    {
-        id: 2,
-        title: 'Fantasy Books',
-        price: 6000,
-        category: "Fantasy",
-        image: courtofwinter,
-    },
-    {
-        id: 3,
-        title: 'Fiction Books',
-        price: 6000,
-        category: "Fiction",
-        image: Drift,
-    },
-    {
-        id: 4,
-        title: 'Fiction Books',
-        price: 7000,
-        category: "Fiction",
-        image: Foulhearthuntsman,
-    },
-    {
-        id: 5,
-        title: 'Horror Books',
-        price: 4500,
-        category: "Horror",
-        image: birdbox,
-    },
-    {
-        id: 6,
-        title: 'Horror Books',
-        price: 5500,
-        category: "Horror",
-        image: darkvalley,
-    },
-    {
-        id: 7,
-        title: 'Mystery Books',
-        price: 4000,
-        category: "Mystery",
-        image: AManLayDead,
-    },
-    {
-        id: 8,
-        title: 'Mystery Books',
-        price: 4500,
-        category: "Mystery",
-        image: CrimeAndPunishment,
-    },
-    {
-        id: 9,
-        title: 'Novels',
-        price: 5500,
-        category: "Novels",
-        image: PeerEKamil,
-    },
-    {
-        id: 10,
-        title: 'Novels',
-        price: 6000,
-        category: "Novels",
-        image: UmraoJaanAdda,
-    },
-    {
-        id: 11,
-        title: 'Romance Books',
-        price: 5000,
-        category: "Romance",
-        image: ACurseFromTheTrueLove,
-    },
-    {
-        id: 12,
-        title: 'Romance Books',
-        price: 5500,
-        category: "Romance",
-        image: WitchOfwildThings,
-    },
-    {
-        id: 13,
-        title: 'Science Fiction Books',
-        price: 6500,
-        category: "Science Fiction",
-        image: Dune,
-    },
-    {
-        id: 14,
-        title: 'Science Fiction Books',
-        price: 7000,
-        category: "Science Fiction",
-        image: Ice,
-    },
-    {
-        id: 15,
-        title: 'Suspense Books',
-        price: 6000,
-        category: "Suspense",
-        image: Chaos,
-    },
-    {
-        id: 16,
-        title: 'Suspense Books',
-        price: 6500,
-        category: "Suspense",
-        image: LoriFoster,
-    },
-    {
-        id: 17,
-        title: 'Thriller Books',
-        price: 5500,
-        category: "Thriller",
-        image: FiveBadDeeds,
-    },
-    {
-        id: 18,
-        title: 'Thriller Books',
-        price: 6000,
-        category: "Thriller",
-        image: DeathInTheDarkWoods,
-    },
+export const booksData = [
+{
+    id: 1,
+    title: 'Fantasy Books',
+    price: 5000,
+    category: "Fantasy",
+    image: circe,
+},
+{
+    id: 2,
+    title: 'Fantasy Books',
+    price: 6000,
+    category: "Fantasy",
+    image: courtofwinter,
+},
+{
+    id: 3,
+    title: 'Fiction Books',
+    price: 6000,
+    category: "Fiction",
+    image: Drift,
+},
+{
+    id: 4,
+    title: 'Fiction Books',
+    price: 7000,
+    category: "Fiction",
+    image: Foulhearthuntsman,
+},
+{
+    id: 5,
+    title: 'Horror Books',
+    price: 4500,
+    category: "Horror",
+    image: birdbox,
+},
+{
+    id: 6,
+    title: 'Horror Books',
+    price: 5500,
+    category: "Horror",
+    image: darkvalley,
+},
+{
+    id: 7,
+    title: 'Mystery Books',
+    price: 4000,
+    category: "Mystery",
+    image: AManLayDead,
+},
+{
+    id: 8,
+    title: 'Mystery Books',
+    price: 4500,
+    category: "Mystery",
+    image: CrimeAndPunishment,
+},
+{
+    id: 9,
+    title: 'Novels',
+    price: 5500,
+    category: "Novels",
+    image: PeerEKamil,
+},
+{
+    id: 10,
+    title: 'Novels',
+    price: 6000,
+    category: "Novels",
+    image: UmraoJaanAdda,
+},
+{
+    id: 11,
+    title: 'Romance Books',
+    price: 5000,
+    category: "Romance",
+    image: ACurseFromTheTrueLove,
+},
+{
+    id: 12,
+    title: 'Romance Books',
+    price: 5500,
+    category: "Romance",
+    image: WitchOfwildThings,
+},
+{
+    id: 13,
+    title: 'Science Fiction Books',
+    price: 6500,
+    category:     "Science-Fiction",
+    image: Dune,
+},
+{
+    id: 14,
+    title: 'Science Fiction Books',
+    price: 7000,
+    category:"Science-Fiction",
+    image: Ice,
+},
+{
+    id: 15,
+    title: 'Suspense Books',
+    price: 6000,
+    category: "Suspense",
+    image: Chaos,
+},
+{
+    id: 16,
+    title: 'Suspense Books',
+    price: 6500,
+    category: "Suspense",
+    image: LoriFoster,
+},
+{
+    id: 17,
+    title: 'Thriller Books',
+    price: 5500,
+    category: "Thriller",
+    image: FiveBadDeeds,
+},
+{
+    id: 18,
+    title: 'Thriller Books',
+    price: 6000,
+    category: "Thriller",
+    image: DeathInTheDarkWoods,
+},
 ];
