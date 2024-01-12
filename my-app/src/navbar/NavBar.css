@@ -23,10 +23,13 @@
   }
   .cart {
     padding-left: 11px;
+    /* font-size: large; */
   }
   .cart-icon {
     padding-left: 197px;
     font-size:larger;
+    font-weight: bold;
+    color: white;
 
   }
   .clothes {
