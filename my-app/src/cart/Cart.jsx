@@ -6,8 +6,6 @@ import "./Cart.css";
 const Cart = observer(() => {
   const cartItems = appStore.getCartItems();
 
-  console.log("Rendering Cart Component");
-
   const getTotalPrice = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   };
