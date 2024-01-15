@@ -1,51 +1,33 @@
-import React, { useEffect } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import React, { useEffect,useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { observer } from "mobx-react";
 import "./NavBar.css";
 import Image from "../assets/homepageImage/images (2).jpg";
-import { GrCart } from "react-icons/gr";
+import { GrCart} from "react-icons/gr";
 import appStore from "../store/Store";
+import Cart from "../cart/Cart";
 
-const NavBar = () => {
-  const navigate = useNavigate();
+const NavBar = observer(() => {
   const location = useLocation();
- 
-  
-  const handleCategoryClick = (category) => {
-    if (appStore.selectedCategory === category) {
-      appStore.setSelectedCategory(null);
-    } else {
-      appStore.setSelectedTab(category);
-      appStore.setSelectedCategory(category);
-    }
-  };
-  // const handleCategoryClick = (category) => {
-  //   appStore.setSelectedTab(category);
-  //   appStore.setSelectedCategory(category);
-  // };
+  const [isCartModalOpen, setIsCartModalOpen] = useState(false);
 
+  const openCartModal = () => setIsCartModalOpen(true);
+  const closeCartModal = () => setIsCartModalOpen(false);
   useEffect(() => {
     const isHomePage = location.pathname === "/";
-    const isCartPage = location.pathname === "/cart";
-
-    if (isHomePage) {
-      appStore.setSelectedTab("home");
-    } else if (isCartPage) {
-      appStore.setSelectedTab("cart");
-    }
-  }, [location.pathname]);
-
-  useEffect(() => {
     const isClothesPage = location.pathname === "/clothes";
     const isBooksPage = location.pathname === "/books";
 
-    if (isClothesPage && appStore.selectedTab !== "clothes") {
-      appStore.setSelectedTab(null);
-    } else if (isBooksPage && appStore.selectedTab !== "books") {
+    if (isHomePage) {
+      appStore.setSelectedTab("home");
+    } else if (isClothesPage) {
+      appStore.setSelectedTab("clothes");
+    } else if (isBooksPage) {
+      appStore.setSelectedTab("books");
+    } else {
       appStore.setSelectedTab(null);
     }
   }, [location.pathname]);
-console.log("Selected Tab:", appStore.selectedTab);
-console.log("Selected Category:", appStore.selectedCategory);
 
   return (
     <div className="app-container">
@@ -60,7 +42,6 @@ console.log("Selected Category:", appStore.selectedCategory);
             className={`nav-item clothes ${
               appStore.selectedTab === "clothes" ? "active-tab" : ""
             }`}
-            onClick={() => handleCategoryClick("clothes")}
           >
             <Link to="/clothes" className="nav-items">
               Clothes
@@ -70,31 +51,26 @@ console.log("Selected Category:", appStore.selectedCategory);
             className={`nav-item books ${
               appStore.selectedTab === "books" ? "active-tab" : ""
             }`}
-            onClick={() => handleCategoryClick("books")}
           >
             <Link to="/books" className="nav-items">
               Books
             </Link>
           </li>
           <li className="nav-item cart-icon">
-            <Link to="/cart-icon" className="cart-icon">
-              <GrCart />
-            </Link>
-          </li>
-          <li
-            className={`nav-item ${
-              appStore.selectedTab === "cart" ? "active-tab" : ""
-            }`}
-            onClick={() => handleCategoryClick("cart")}
-          >
-            <Link to="/cart" className="cart">
-              CART
-            </Link>
-          </li>
+          <div className="cart-link" onClick={openCartModal}>
+            <div className="cart-icon-wrapper">
+              <GrCart className="cart-icon" />
+              <span className="cart-count">{appStore.cartItems.length}</span>
+            </div>
+          </div>
+        </li>
+         
         </ul>
+        {isCartModalOpen && <Cart onClose={closeCartModal} />}
+
       </nav>
     </div>
   );
-};
+});
 
 export default NavBar;

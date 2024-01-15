@@ -9,7 +9,6 @@ class AppStore {
   filteredData = [];
   cartItems = [];
 
-
   constructor() {
     makeAutoObservable(this);
     this.filterData();
@@ -18,10 +17,6 @@ class AppStore {
   setSelectedTab(tab) {
     this.selectedTab = tab;
     this.filterData();
-    console.log("Selected Tab:", tab);
-    console.log("Filtered Data:", this.filteredData);
-    console.log('Cart Items:', this.cartItems);
-
   }
 
   filterData() {
@@ -39,9 +34,6 @@ class AppStore {
             item.category.toLowerCase() === this.selectedCategory.toLowerCase()
         )
       : this.allData;
-    console.log("Filtered Data:", this.filteredData);
-    console.log('Cart Items:', this.cartItems);
-
   }
 
   setSelectedCategory(category) {
@@ -53,40 +45,24 @@ class AppStore {
     this.selectedItems = items;
   }
   addToCart(item) {
-    console.log("Adding to cart:", item);
-    const existingItem = this.cartItems.find((cartItem) => cartItem.id === item.id);
-  
+    const existingItem = this.cartItems.find(
+      (cartItem) => cartItem.id === item.id
+    );
+
     if (existingItem) {
       existingItem.quantity += 1;
     } else {
       this.cartItems.push({ ...item, quantity: 1 });
     }
-  
-    console.log("Cart Items after addition:", this.cartItems);
   }
-  
+
   getCartItems() {
-    console.log("Getting cart items:", this.cartItems);
     return this.cartItems;
   }
-  
 
-  // addToCart(item) {
-  //   const existingItem = this.cartItems.find((cartItem) => cartItem.id === item.id);
-
-  //   if (existingItem) {
-  //     existingItem.quantity += 1; // Increase quantity if item is already in the cart
-  //   } else {
-  //     this.cartItems.push({ ...item, quantity: 1 }); // Add the item to the cart with quantity 1
-  //   }
-  // }
-
-  // getCartItems() {
-  //   return this.cartItems;
-  // }
-  // addToCart(item) {
-  //   this.cartItems.push(item);
-  // }
+  clearCart() {
+    this.cartItems = [];
+  }
 }
 
 const appStore = new AppStore();

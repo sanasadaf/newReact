@@ -1,8 +1,8 @@
-import React from 'react';
-import { observer } from 'mobx-react';
-import './CardsContainer.css';
-import appStore from '../../store/Store.jsx';
-import Cards from '../cards/Cards';
+import React from "react";
+import { observer } from "mobx-react";
+import "./CardsContainer.css";
+import appStore from "../../store/Store.jsx";
+import Cards from "../cards/Cards";
 
 const CardsContainer = () => {
   const { filteredData } = appStore;
