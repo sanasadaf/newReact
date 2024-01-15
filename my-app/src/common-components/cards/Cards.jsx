@@ -2,7 +2,6 @@ import React from 'react';
 import { observer } from 'mobx-react';
 import './Cards.css';
 import appStore from '../../store/Store.jsx';
-import './Cards.css';
 
 const Cards = ({ data }) => {
   const { selectedItems, setSelectedItems } = appStore;
@@ -15,6 +14,7 @@ const Cards = ({ data }) => {
 
     appStore.setSelectedItems([...appStore.selectedItems, itemId]);
   };
+
   return (
     <div className="container">
       <div className="col" key={data.id}>

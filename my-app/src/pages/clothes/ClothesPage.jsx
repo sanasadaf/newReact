@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import MenuBar from "../../common-components/menu-bar/Menubar";
-import CardsContainer from "../../common-components/cards-container/CardsContainer"; 
+import CardsContainer from "../../common-components/cards-container/CardsContainer";
+import { useLocation } from "react-router-dom";
 
 const Clothes = () => {
   const clothingCategories = [
@@ -15,17 +16,29 @@ const Clothes = () => {
     "Girls' Uniform",
   ];
 
-  const [selectedCategory, setSelectedCategory] = React.useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    const path = location.pathname.split("/");
+    setSelectedCategory(path[1] || null);
+  }, [location.pathname]);
 
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
   };
 
   return (
-    <div style={{ display: 'flex' }}>
-    <MenuBar categories={clothingCategories} onCategoryClick={handleCategorySelect} />
-    {selectedCategory && <CardsContainer selectedCategory={selectedCategory} />}
-  </div>
+    <div style={{ display: "flex" }}>
+      <MenuBar
+        categories={clothingCategories}
+        onCategoryClick={handleCategorySelect}
+        selectedCategory={selectedCategory} 
+      />
+      {selectedCategory && (
+        <CardsContainer selectedCategory={selectedCategory} />
+      )}
+    </div>
   );
 };
 

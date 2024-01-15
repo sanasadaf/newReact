@@ -1,51 +1,39 @@
-.menu-bar{
-  border:2px solid rgb(56, 2, 58);
+.menu-bar {
+  border: 2px solid rgb(56, 2, 58);
   height: 450px;
   width: 213px;
   margin-left: 3%;
   border-radius: 8px;
   margin-top: 3%;
-  background-color:rgba(178, 129, 179, 0.5);
-
+  background-color: rgba(178, 129, 179, 0.5);
 }
- .menu-item-label {
+.menu-item-label {
   cursor: pointer;
   text-transform: uppercase;
-  background-color: transparent;
   border-radius: 2px;
-  font-size: .95em;
-  font-family: 'Slack-Lato', 'Slack-Fractions', 'appleLogo', sans-serif;
+  font-size: 0.95em;
+  font-family: "Slack-Lato", "Slack-Fractions", "appleLogo", sans-serif;
   font-weight: 300;
-  cursor: pointer;
   display: block;
   margin-top: 4%;
   padding: 10px 30px;
-     
 }
-.menu-item-label:hover{
-  background-color:rgba(189, 128, 190, 0.5);
+.menu-item-label:hover {
+  background-color: rgba(189, 128, 190, 0.5);
   color: rgb(55, 20, 56);
   font-weight: bold;
   border-radius: 9px;
-
 }
 
 .menu-item.active .menu-item-label {
-  background-color:rgb(73,37,74);
+  background-color: rgb(73, 37, 74);
   color: white;
   font-weight: bold;
   border-radius: 9px;
 }
-.menu-item.active{
+.menu-item.active {
   padding: 0px 5px;
-
 }
-.menu-item:hover{
+.menu-item:hover {
   padding: 0px 5px;
-
-}
-@media (max-width: 768px) {
-  .menu-bar {
-    top: 60px; 
-  }
 }
