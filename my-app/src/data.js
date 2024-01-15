@@ -29,14 +29,12 @@ import PeerEKamil from './assets/BooksImages/novels/peer e kamil.png'
 import UmraoJaanAdda from './assets/BooksImages/novels/umrao jan adda.png'
 import ACurseFromTheTrueLove from './assets/BooksImages/romance/A curse for true love.png'
 import WitchOfwildThings from './assets/BooksImages/romance/witch of wild things.png'
-import Dune from './assets/BooksImages/science fiction/the left hand of darkness.png'
-import Ice from './assets/BooksImages/science fiction/scanner darkly.png'
+import Dune from './assets/BooksImages/science fiction/hyperion.png'
+import Ice from './assets/BooksImages/science fiction/frankenstien.png'
 import Chaos from './assets/BooksImages/suspense/our sisters grave.png'
 import LoriFoster from './assets/BooksImages/suspense/lori foster.png'
 import FiveBadDeeds from './assets/BooksImages/thriller/five bad deeds.png'
 import DeathInTheDarkWoods from './assets/BooksImages/thriller/death in the dark woods.png'
-
-
 
 export const clothesData = [
   {
