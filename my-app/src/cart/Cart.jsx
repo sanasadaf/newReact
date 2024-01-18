@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import appStore from "../store/Store";
 import Modal from "../common-components/Modal/modal";
 import "./Cart.css";
+import Toast from "../common-components/toast/Toast";
 
 const Cart = observer(({ onClose }) => {
   const cartItems = appStore.getCartItems();
@@ -21,8 +22,11 @@ const Cart = observer(({ onClose }) => {
 
   const handleCheckout = () => {
     appStore.clearCart();
-    onClose(); 
-    navigate("/"); 
+    onClose();
+    appStore.showSuccessToast();
+    setTimeout(() => {
+      navigate("/");
+    }, 2000);
   };
 
   return (
@@ -61,6 +65,7 @@ const Cart = observer(({ onClose }) => {
           </div>
         )}
       </div>
+      <Toast />
     </Modal>
   );
 });

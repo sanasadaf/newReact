@@ -5,6 +5,7 @@ const Toast = () => {
   const [showSuccess, setShowSuccess] = useState(false);
   const [showWarning, setShowWarning] = useState(false);
   const [showDanger, setShowDanger] = useState(false);
+
   const showToast = (type) => {
     switch (type) {
       case 'success':
@@ -23,6 +24,11 @@ const Toast = () => {
         break;
     }
   };
+
+  const handleShowToast = (type) => {
+    showToast(type);
+  };
+
   return (
     <div>
       {showSuccess && (
@@ -43,9 +49,9 @@ const Toast = () => {
       )}
 
       <div className="buttons-div">
-        <button onClick={() => showToast('success')}>Show Success Toast</button>
-        <button onClick={() => showToast('warning')}>Show Warning Toast</button>
-        <button onClick={() => showToast('danger')}>Show Danger Toast</button>
+        <button onClick={() => handleShowToast('success')}>Show Success Toast</button>
+        <button onClick={() => handleShowToast('warning')}>Show Warning Toast</button>
+        <button onClick={() => handleShowToast('danger')}>Show Danger Toast</button>
       </div>
     </div>
   );

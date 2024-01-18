@@ -1,4 +1,4 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable } from "mobx";                                                                                  
 import { clothesData, booksData } from "../data";
 
 class AppStore {
@@ -8,10 +8,34 @@ class AppStore {
   allData = [];
   filteredData = [];
   cartItems = [];
+  showToast = {
+    isVisible: false,
+    type: "success",
+    message: "Checkout successful!",
+  };
 
   constructor() {
     makeAutoObservable(this);
     this.filterData();
+  }
+  showSuccessToast() {
+    this.showToast = {
+      isVisible: true,
+      type: "success",
+      message: "Checkout successful!",
+    };
+
+    setTimeout(() => {
+      this.hideToast();
+    }, 3000);
+  }
+
+  hideToast() {
+    this.showToast = {
+      isVisible: false,
+      type: "",
+      message: "",
+    };
   }
 
   setSelectedTab(tab) {
