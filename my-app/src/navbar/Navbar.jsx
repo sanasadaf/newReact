@@ -3,14 +3,15 @@ import { Link, useLocation } from "react-router-dom";
 import { observer } from "mobx-react";
 import "./NavBar.css";
 import Image from "../assets/homepageImage/images (2).jpg";
-import { GrCart} from "react-icons/gr";
+import { GrCart} from "react-icons/gr"; 
 import appStore from "../store/Store";
 import Cart from "../cart/Cart";
-
+import Toast from "../common-components/toast/Toast";
 
 const NavBar = observer(() => {
   const location = useLocation();
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
+  const [toastShow,setToastShow] = useState(false)
 
   const openCartModal = () => setIsCartModalOpen(true);
   const closeCartModal = () => setIsCartModalOpen(false);
@@ -29,8 +30,16 @@ const NavBar = observer(() => {
       appStore.setSelectedTab(null);
     }
   }, [location.pathname]);
+  useEffect(() => {
+    if(toastShow && location.pathname == "/"){
+      setTimeout(() => {
+        setToastShow(false)
+      },4000)
+    }
+  },[toastShow])
 
   return (
+    <>
     <div className="app-container">
       <nav>
         <ul className="nav-list">
@@ -65,11 +74,17 @@ const NavBar = observer(() => {
             </div>
           </div>
         </li>
+         
         </ul>
-        {isCartModalOpen && <Cart onClose={closeCartModal} />}
+        {isCartModalOpen && <Cart
+         onClose={closeCartModal} 
+         setToastShow={setToastShow}
+         />}
 
       </nav>
     </div>
+    {toastShow && <Toast showSuccess={toastShow} setShowSuccess={setToastShow} />}
+         </>
   );
 });
 
