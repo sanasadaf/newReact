@@ -5,7 +5,7 @@ const Toast = () => {
   const [showSuccess, setShowSuccess] = useState(false);
   const [showWarning, setShowWarning] = useState(false);
   const [showDanger, setShowDanger] = useState(false);
-  const showToast = (type) => {
+   const showToast = (type) => {
     switch (type) {
       case 'success':
         setShowSuccess(true);
@@ -52,3 +52,27 @@ const Toast = () => {
 };
 
 export default Toast;
+// import React, { useState } from 'react';
+// import './ToastStyles.css';
+
+//   const Toast = ({ showToastType, onClose }) => {
+//   const [showToast, setShowToast] = useState(true);
+
+//   const handleClose = () => {
+//     setShowToast(false);
+//     onClose(); 
+//   };
+
+//   return (
+//     <div className={`toast ${showToastType} ${showToast ? 'show' : ''}`} onClick={handleClose}>
+//       <p>{showToastType.charAt(0).toUpperCase() + showToastType.slice(1)} <br />
+//         Message</p>
+//     </div>
+//   );
+// };
+
+// export const showToast = (type, onClose) => {
+//   return <Toast showToastType={type} onClose={onClose} />;
+// };
+
+// export default Toast

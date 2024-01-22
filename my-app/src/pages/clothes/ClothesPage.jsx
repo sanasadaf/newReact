@@ -23,7 +23,6 @@ const Clothes = () => {
     const path = location.pathname.split("/");
     setSelectedCategory(path[1] || null);
   }, [location.pathname]);
-
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
   };
