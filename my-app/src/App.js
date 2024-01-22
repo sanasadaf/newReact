@@ -4,6 +4,7 @@ import Homepage from "./pages/homepage/Homepage";
 import Navbar from "../src/navbar/Navbar";
 import Clothes from "./pages/clothes/ClothesPage";
 import Books from "./pages/books/books";
+// import Toast from "./common-components/toast/Toast";
 const App = () => {
   const [selectedTab, setSelectedTab] = useState("home");
   return (
@@ -12,11 +13,11 @@ const App = () => {
           onSelectCategory={setSelectedTab}
           selectedTab={selectedTab}
         />
+        {/* <Toast/> */}
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/clothes" element={<Clothes />} />
           <Route path="/books" element={<Books />} />
-        
         </Routes>
       </>
   );

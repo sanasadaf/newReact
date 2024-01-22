@@ -7,6 +7,7 @@ import { GrCart} from "react-icons/gr";
 import appStore from "../store/Store";
 import Cart from "../cart/Cart";
 
+
 const NavBar = observer(() => {
   const location = useLocation();
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
@@ -64,7 +65,6 @@ const NavBar = observer(() => {
             </div>
           </div>
         </li>
-         
         </ul>
         {isCartModalOpen && <Cart onClose={closeCartModal} />}
 
