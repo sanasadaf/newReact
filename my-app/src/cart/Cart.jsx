@@ -5,7 +5,7 @@ import appStore from "../store/Store";
 import Modal from "../common-components/Modal/modal";
 import "./Cart.css";
 
-const Cart = observer(({ onClose }) => {
+const Cart = observer(({ onClose,setToastShow }) => {
   const cartItems = appStore.getCartItems();
   const navigate = useNavigate();
 
@@ -23,6 +23,7 @@ const Cart = observer(({ onClose }) => {
     appStore.clearCart();
     onClose(); 
     navigate("/"); 
+    setToastShow(true)
   };
 
   return (
