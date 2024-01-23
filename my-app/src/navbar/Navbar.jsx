@@ -11,8 +11,7 @@ import Toast from "../common-components/toast/Toast";
 const NavBar = observer(() => {
   const location = useLocation();
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
-  const [toastShow,setToastShow] = useState(false)
-
+  const [toastShow,setToastShow] = useState(false);
   const openCartModal = () => setIsCartModalOpen(true);
   const closeCartModal = () => setIsCartModalOpen(false);
   useEffect(() => {
