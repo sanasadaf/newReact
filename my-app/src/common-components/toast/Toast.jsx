@@ -1,17 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ToastStyles.css';
 
-const Toast = ({
-  showSuccess, setShowSuccess
-}) => {
-  const showToast = (type) => {
-    switch (type) {
-      case 'success':
-        setShowSuccess(true);
-        setTimeout(() => setShowSuccess(false), 3000);
-        break;
-    }
-  };
+const Toast = ({ showSuccess, setshowSuccess }) => {
   return (
     <div>
       {showSuccess && (
